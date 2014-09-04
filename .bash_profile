@@ -21,15 +21,15 @@ alias gnc='sudo gdb /usr/local/nginx/sbin/nginx -c '
 #remove core files
 alias rmc='rm -rf /cores/*'
 
+#c develop
 alias c='cd ~/Documents/dp/cpp'
-
-alias dp='cd ~/Documents/dp'
-alias slb='cd ~/Documents/dp/phoenix-slb-admin'
 alias d='cd ~/Documents/dp/Dengine'
 alias t='cd ~/Documents/dp/Dengine/tengine'
-alias nslb='cd /usr/local/nginx/conf/phoenix-slb'
-alias agent='cd /Users/mengwenchao/Documents/dp/phoenix/phoenix-agent'
-#alias ls='ls -G'
+
+#java
+alias dp='cd ~/Documents/dp'
+alias slb='cd ~/Documents/dp/phoenix-slb-admin'
+alias agent='cd ~/Documents/dp/phoenix/phoenix-agent'
 
 
 #maven
@@ -38,5 +38,6 @@ alias mr='mvn -Dmaven.test.skip=true jetty:run'
 
 NODE_HOME=/Users/mengwenchao/Downloads/develop/node-v0.10.29-darwin-x64
 export PATH=/Users/mengwenchao/.local/stow/gdb-1822/bin:$PATH:$NODE_HOME/bin
+
 #add private key
-dp;ssh-add wenchao.meng oytmfc;ssh-add oytmfc
+dp;ssh-add  $GIT_COMPANY $GIT_GITHUB;
