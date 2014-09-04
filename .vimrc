@@ -1,4 +1,3 @@
-set tags=/vagrant/Dengine/tags,/usr/src/linux-source-3.11.0/tags
 set ts=4
 set cindent
 set hlsearch
@@ -6,8 +5,6 @@ set nu
 set autochdir
 
 "CSCOPE
-cs add /vagrant/Dengine/cscope.out /vagrant/Dengine/
-"cs add /usr/src/linux-source-3.11.0/cscope.out /usr/src/linux-source-3.11.0/
 
 "
 set completeopt=longest,menu
