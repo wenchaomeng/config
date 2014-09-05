@@ -1,8 +1,8 @@
 alias dp='cd /vagrant'
 alias c='cd /vagrant/cpp/ctest'
 alias ls='ls --color'
-alias d='cd /vagrant/Dengine/'
-alias t='cd /vagrant/Dengine/tengine'
+alias d='cd /vagrant/Dengine_linux/'
+alias t='d; cd tengine'
 
 
 NGINX_HOME=/usr/local/nginx
