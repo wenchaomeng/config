@@ -40,3 +40,4 @@ map <F3><F3> :TlistToggle<cr>
 "
 
 map <F5> :!gcc % && ./a.out<cr>
+
