@@ -1,4 +1,4 @@
-set tags=/vagrant/Dengine/tags,/usr/src/linux-source-3.11.0/tags
+"set tags=/vagrant/Dengine/tags,/usr/src/linux-source-3.11.0/tags
 set ts=4
 set cindent
 set hlsearch
