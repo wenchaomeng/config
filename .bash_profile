@@ -13,6 +13,8 @@ alias c='dp; cd cpp'
 alias ls='ls -G'
 alias d='dp; cd Dengine'
 alias t='d;cd tengine'
+alias m='cd /data/appdatas/phoenix/slb/git/phoenix-slb-model'
+alias ml='cd /data/appdatas/phoenix/slb/git/phoenix-slb-model'
 
 
 NGINX_HOME=/usr/local/nginx
@@ -37,3 +39,7 @@ alias slbm='cd /data/appdatas/phoenix/slb/git/phoenix-slb-model'
 
 #maven
 alias mt='mvn -Dmaven.test.skip=true'
+
+
+#gdb
+export PATH=~/.local/stow/gdb-1822/bin:$PATH
