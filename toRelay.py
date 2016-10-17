@@ -13,20 +13,20 @@ import string
 
 
 
-googleCode="UZQJDRII4QANVSUX"
-password=""
+googleCode="xxxxx"
+password="xxxxx"
 
 def GoogleAuthenticatorCode(secret):
     key = base64.b32decode(secret, True)
     message = struct.pack(">Q", time.time() / 30)
     hashcode = hmac.new(key, message, hashlib.sha1).digest()
     offset = ord(hashcode[19]) & 15
-    return (struct.unpack(">I", hashcode[offset:offset+4])[0] & 0x7fffffff) % 1000000
+    raw = (struct.unpack(">I", hashcode[offset:offset+4])[0] & 0x7fffffff) % 1000000
+    return  "%06d" % raw
 
-def Main():
+
+def Main_():
 	code = str(GoogleAuthenticatorCode(googleCode))
-	if len(code) < 6:
-		code = "0" * (6-len(code)) + code
 		
 	screen = crt.GetScriptTab().Screen
 	screen.Synchronous = True
@@ -37,5 +37,12 @@ def Main():
 		screen.Send(password + chr(13))
 	screen.Synchronous = False
 
-
+def Main():
+	code = str(GoogleAuthenticatorCode(googleCode))
+	screen = crt.GetScriptTab().Screen
+	screen.Synchronous = True
+	if screen.WaitForString("Password:", 1):
+	    screen.Send(password + code + chr(13))
+    
 Main()
+
