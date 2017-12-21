@@ -2,4 +2,10 @@
 	default = simple
 [user]
 	name = wenchao.meng
-	email = wenchao.meng@dianping.com
+	email = oytmfc@gmail.com
+[alias]
+	co = checkout
+	ci = commit
+	br = branch
+	st = status
+
