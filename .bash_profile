@@ -33,6 +33,11 @@ alias rmc='rm -rf /cores/*'
 
 set -o vi
 
+#java
+JAVA_HOME=`/usr/libexec/java_home -v 1.8` 
+export PATH=$PATH:$JAVA_HOME/bin
+
+
 #slb
 alias slb='cd ~/Documents/dp/phoenix-slb-admin'
 alias slbm='cd /data/appdatas/phoenix/slb/git/phoenix-slb-model'
@@ -43,3 +48,10 @@ alias mt='mvn -Dmaven.test.skip=true'
 
 #gdb
 export PATH=~/.local/stow/gdb-1822/bin:$PATH
+
+#xpipe
+alias xp='cd ~/Documents/ctrp/x-pipe'
+
+#redis
+alias r='cd ~/Documents/ctrp/redis'
+
