@@ -14,14 +14,42 @@ path=`getCurrentRealPath`
 . $path/common.sh $path
 
 
+arg=($@)
+arglen=$#
+
 code=`python $codeScript`
+
+#manual code
+echo $arglen
+if [ $arglen -gt 0   ];then
+	last=$(($arglen-1))
+	lastArg=${arg[$(($last))]}
+	lastArgLen=${#lastArg}
+	if [ $lastArgLen -eq 6 ];then
+		code=$lastArg
+		unset arg[$last]
+		echo "user input code:$code"
+	fi
+fi
+	
+echo "final code:$code"
 realpass="$rawpass $code"
 
 if [[ $1 =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
 	ipAccount="$1 $powerop"
 else
-	ipAccount=`python $dictScript $@`
+	echo "here ${arg[@]}"
+	ipAccount=`python $dictScript ${arg[@]}`
 fi
 
 echo "logging on $ipAccount"
-$path/expect_jump.sh  $jump $user "$realpass"  $ipAccount
+
+jump_used=$jump
+if [[ $ipAccount =~ ^10.(128|130|4).*$ ]];then
+	jump_used=$jump_test	
+	ssh-keygen -R ssh.fws.jumpserver.sys.ctripcorp.com
+fi
+export LC_CTYPE=en_US
+
+echo $jump_used
+$path/expect_jump.sh  $jump_used $user "$realpass"  $ipAccount

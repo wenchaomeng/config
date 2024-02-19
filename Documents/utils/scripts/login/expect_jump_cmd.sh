@@ -28,11 +28,11 @@ expect {
 foreach item $realserverips {
 		log "--------------------------------$item----------------------------------------"
 		expect {
-		"server keyword" { send "$item\r" }
+		"请选择目标资产：" { send "$item\r" }
 		}
 
 		expect {
-		"Select account" { send "$role\r" }
+		"请选择登录帐号：" { send "$role\r" }
 		}
 
 		if { $cmd == "" } {
@@ -48,7 +48,7 @@ foreach item $realserverips {
 				"~]\\$" { log  "$expect_out(buffer)";send "exit\r"}
 			}
 			expect {
-				"to last session or q to exit" { send "\r" }
+				"键退出" { send "\r" }
 			}
 		}
 }

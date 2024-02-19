@@ -2,10 +2,13 @@
 	default = simple
 [user]
 	name = wenchao.meng
-	email = oytmfc@gmail.com
+	email = wcmeng@trip.com
 [alias]
 	co = checkout
 	ci = commit
 	br = branch
 	st = status
-
+#[https]
+#	proxy = https://hkproxy.cn1.global.ctrip.com:8080
+[credential]
+	helper = osxkeychain
