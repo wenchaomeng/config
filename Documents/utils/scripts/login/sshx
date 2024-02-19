@@ -53,3 +53,4 @@ export LC_CTYPE=en_US
 
 echo $jump_used
 $path/expect_jump.sh  $jump_used $user "$realpass"  $ipAccount
+

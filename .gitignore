@@ -1,1 +1,9 @@
-*
+/*
+!.gitignore
+!/Documents
+/Documents/*
+!/Documents/utils
+Documents/utils/rzsz
+*.log
+*.vscode
+dict.config
